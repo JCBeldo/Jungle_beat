@@ -2,15 +2,24 @@ require 'rspec'
 require './lib/node'
 
 RSpec.describe Node do
-  it '#initialize' do
-  node =Node.new('bang')
+  describe '#initialize' do
+    
+    it 'exists' do
+      node = Node.new('bang')
 
-  expect(node.data).to_a('bang')
-  end
+      expect(node).to be_a(Node)
+    end
   
-  it '#initialize2' do
-    node = Node.new("plop")
+    it 'reads data' do
+      node = Node.new('bang')
 
-    expect(node.next_node).to eq(nil)
- end
+      expect(node.data).to eq('bang')
+    end
+
+    it 'give nil' do
+      node = Node.new('bang')
+
+      expect(node.next_node).to eq(nil)
+    end
+  end
 end
