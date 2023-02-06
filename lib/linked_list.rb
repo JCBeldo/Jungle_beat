@@ -36,22 +36,27 @@ class LinkedList
     end
     count
   end
-
   
   def to_string
-    string = '' 
+    data_string = '' 
     current_node = @head
     if(self.head.nil?)
-      return string 
+      return data_string 
     else
       while(!current_node.next_node.nil?)
-        string << current_node.data
+          # require 'pry'; binding.pry
+          # data_string = ' '
+        data_string += ' ' << current_node.data
         current_node = current_node.next_node
+        # current_node = current_node.next_node
         # head_data = head_data.next_node
       end
-      string << current_node.data
+        # require 'pry'; binding.pry
+      # data_string << ' ' << current_node.data
+      # data_string << ' ' << current_node.data
+
     end
-  string
+  data_string
   end
 
   # require 'pry'; binding.pry
