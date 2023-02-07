@@ -1,12 +1,11 @@
 require './lib/node'
 
 class LinkedList
-  attr_accessor :next_node
-  attr_reader :head
+  attr_accessor :next_node, :head
   
   def initialize(head = nil, next_node = nil)
     @head = head
-    @next_node = next_node
+    # @next_node = next_node
   end
 
   def append(data)
@@ -61,5 +60,23 @@ class LinkedList
       current_head.next_node = @head
       @head = current_head
     end
+    return data
+  end
+
+  def insert(position, data)
+    if(self.head.nil?)
+      position = position
+      return 'empty'
+    else
+      current_node = @head
+      (position - 1).times do
+      current_node = current_node.next_node
+    end
+    new_node = Node.new(data)
+    new_node.next_node = current_node.next_node
+    current_node.next_node = new_node
+    return data
+  end
   end
 end
+  require 'pry'; binding.pry
