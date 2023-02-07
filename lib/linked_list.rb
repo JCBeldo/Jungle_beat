@@ -46,7 +46,7 @@ class LinkedList
       while(!current_node.next_node.nil?)
           # require 'pry'; binding.pry
           # data_string = ' '
-        data_string += ' ' << current_node.data
+        return data_string += ' ' << current_node.data
         current_node = current_node.next_node
         # current_node = current_node.next_node
         # head_data = head_data.next_node
