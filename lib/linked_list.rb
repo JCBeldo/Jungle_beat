@@ -1,7 +1,7 @@
 require './lib/node'
 
 class LinkedList
-  attr_accessor :next_node, :head
+  attr_accessor :next_node, :head, :position, :count
   
   def initialize(head = nil, next_node = nil)
     @head = head
@@ -79,30 +79,34 @@ class LinkedList
     return data
   end
 
+  # def find(position, num_elements)
+  #   if(self.head.nil?)
+  #     position = @position
+  #     return 'empty'
+  #   else
+  #     current_node = @head
+  #     (position - 1).times do
+  #     current_node = current_node.next_node
+  #     num_elements = position.to_string
+  #     end
+  #   found_node = current_node.position
+  #   new_node.next_node = current_node.next_node
+  #   current_node.next_node = new_node
+  #   end
+  #   return 
+  # end
   def find(position, num_elements)
-    if(self.head.nil?)
-      position = @position
-      return 'empty'
-    else
-      current_node = @head
-      (position - 1).times do
+    current_node = self.head
+    (position).times do    
+      until(current_node == nil || current_node.next_node == nil || current_node.position == position) do
       current_node = current_node.next_node
       num_elements = position.to_string
-      end
-    found_node = current_node.position
-    new_node.next_node = current_node.next_node
-    current_node.next_node = new_node
+
     end
-    return 
+    end
+    return false if current_node == nil
+    return current_node.num_elements
   end
-  # def find(data)
-  #   current_node = self.head
-  #   until(current_node == nil || current_node.next_node == nil || current_node.data == data) do
-  #     current_node = current_node.next_node
-  #   end
-  #   return false if current_node == nil
-  #   return current_node
-  # end
 
 
 end
