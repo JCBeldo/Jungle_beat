@@ -45,18 +45,12 @@ class LinkedList
     else
       while(!current_node.next_node.nil?)
           # require 'pry'; binding.pry
-          # data_string = ' '
-        return data_string += ' ' << current_node.data
+        data_string << +' ' + current_node.data
         current_node = current_node.next_node
-        # current_node = current_node.next_node
-        # head_data = head_data.next_node
       end
         # require 'pry'; binding.pry
-      # data_string << ' ' << current_node.data
-      # data_string << ' ' << current_node.data
-
+      data_string << +' ' + current_node.data
     end
-  data_string
   end
 
   # require 'pry'; binding.pry
