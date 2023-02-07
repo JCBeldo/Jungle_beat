@@ -6,6 +6,7 @@ class LinkedList
   
   def initialize(head = nil, next_node = nil)
     @head = head
+    @next_node = next_node
     # self.next_node = nil
   end
 
@@ -14,7 +15,7 @@ class LinkedList
       @head = Node.new(data, @next_node = nil)
     else
       current_node = self.head
-      new_node = Node.new(data, @next_node= nil)
+      new_node = Node.new(data, @next_node = nil)
       while(!current_node.next_node.nil?)
         current_node = current_node.next_node
       end
@@ -41,15 +42,15 @@ class LinkedList
     data_string = '' 
     current_node = @head
     if(self.head.nil?)
-      return data_string 
+      data_string 
     else
       while(!current_node.next_node.nil?)
           # require 'pry'; binding.pry
-        data_string << +' ' + current_node.data
+        data_string << + ' ' + current_node.data
         current_node = current_node.next_node
       end
         # require 'pry'; binding.pry
-      data_string << +' ' + current_node.data
+      data_string << + ' ' + current_node.data
     end
   end
 
