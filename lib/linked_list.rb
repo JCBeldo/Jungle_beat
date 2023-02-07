@@ -7,7 +7,6 @@ class LinkedList
   def initialize(head = nil, next_node = nil)
     @head = head
     @next_node = next_node
-    # self.next_node = nil
   end
 
   def append(data)
@@ -53,7 +52,5 @@ class LinkedList
       data_string << + ' ' + current_node.data
     end
   end
-
   # require 'pry'; binding.pry
-
 end

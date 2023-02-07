@@ -49,7 +49,8 @@ RSpec.describe do
     
     expect(list.to_string).to eq(' doop')
   end
-
+  
+  describe 'supports more nodes' do
   it 'support more nodes' do
     list = LinkedList.new
     list.append('doop')
@@ -59,7 +60,7 @@ RSpec.describe do
     expect(list.count).to eq(2)
     expect(list.to_string).to eq(' doop deep')
   end
-
+  end  
   end
 end
 
