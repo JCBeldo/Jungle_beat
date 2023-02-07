@@ -10,7 +10,7 @@ class LinkedList
   end
 
   def append(data)
-    if(@head.nil?)
+    if(self.head.nil?)
       @head = Node.new(data, @next_node = nil)
     else
       current_node = self.head
@@ -24,7 +24,7 @@ class LinkedList
   end
 
   def count
-    if(@head.nil?)
+    if(self.head.nil?)
       count = 0
     else
       count = 1
@@ -53,4 +53,13 @@ class LinkedList
     end
   end
   # require 'pry'; binding.pry
+  def prepend(data)
+    if(self.head.nil?)
+      @head = Node.new(data)
+    else
+      current_head = Node.new(data)
+      current_head.next_node = @head
+      @head = current_head
+    end
+  end
 end
