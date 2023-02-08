@@ -132,8 +132,5 @@ class LinkedList
   end
     tail_node.data
   end
-
-
-
 end
   # require 'pry'; binding.pry

@@ -50,7 +50,9 @@ RSpec.describe do
     expect(list.to_string).to eq(' doop')
   end
   
+  end
   describe 'supports more nodes' do
+
   it 'support more nodes' do
     list = LinkedList.new
     list.append('doop')
@@ -60,7 +62,33 @@ RSpec.describe do
     expect(list.count).to eq(2)
     expect(list.to_string).to eq(' doop deep')
   end
-  end  
+  end 
+  describe 'augments list' do
+    
+  it 'augments list' do
+    list = LinkedList.new
+    # list.append('plop')
+    # list.append('suu')
+    # list.prepend('dop')
+    # list.insert(1, 'woo')
+    
+    expect(list.append('plop')).to eq('plop')
+    expect(list.to_string).to eq(' plop')
+    expect(list.append('suu')).to eq('suu')
+    expect(list.prepend('dop')).to eq('dop')
+    expect(list.to_string).to eq(' dop plop suu')
+    expect(list.count).to eq(3)
+    expect(list.insert(1, 'woo')).to eq('woo')
+    expect(list.to_string).to eq(' dop woo plop suu')
+  end
+  xit 'searches' do
+    list = LinkedList.new
+    list.append('plop')
+
+    expect(list.append('plop')).to eq('plop')
+    expect(list.to_string).to eq(' plop')
+  end
+  
   end
 end
 
