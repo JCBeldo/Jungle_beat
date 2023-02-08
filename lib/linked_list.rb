@@ -56,28 +56,30 @@ class LinkedList
     if(self.head.nil?)
       @head = Node.new(data)
     else
-      current_head = Node.new(data)
-      current_head.next_node = self.head
-      @head = current_head
+      current_node = Node.new(data)
+      current_node.next_node = self.head
+      @head = current_node
     end
     return data
   end
 
   def insert(position, data)
     if(self.head.nil?)
-      position = @position
+      position = 0
+        # position = @position
       return 'empty'
     else
       current_node = self.head
       (position - 1).times do
       current_node = current_node.next_node
-      end
+    end
     new_node = Node.new(data)
     new_node.next_node = current_node.next_node
     current_node.next_node = new_node
-    end
-    return data
   end
+  return data
+  end
+  # require 'pry'; binding.pry
 
   # def find(position, num_elements)
   #   if(self.head.nil?)
@@ -128,10 +130,10 @@ class LinkedList
     tail_node = current_node.next_node
     current_node.next_node = nil
   end
-    tail_node
+    tail_node.data
   end
 
 
 
 end
-  require 'pry'; binding.pry
+  # require 'pry'; binding.pry
