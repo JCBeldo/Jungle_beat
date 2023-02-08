@@ -81,14 +81,19 @@ RSpec.describe do
     expect(list.insert(1, 'woo')).to eq('woo')
     expect(list.to_string).to eq(' dop woo plop suu')
   end
-  xit 'searches' do
+  it 'seeks and destroys' do
     list = LinkedList.new
-    list.append('plop')
 
-    expect(list.append('plop')).to eq('plop')
-    expect(list.to_string).to eq(' plop')
+    expect(list.append('flick')).to eq('flick')
+    expect(list.append('deep')).to eq('deep')
+    expect(list.append('doop')).to eq('doop')
+    expect(list.to_string).to eq(' flick deep doop')
+    expect(list.includes?('deep')).to eq(true)
+    expect(list.includes?('dep')).to eq(false)
+    expect(list.pop).to eq('doop')
+    expect(list.pop).to eq('deep')
+    expect(list.to_string).to eq(' flick')
   end
-  
   end
 end
 
