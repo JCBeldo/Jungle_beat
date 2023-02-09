@@ -37,18 +37,18 @@ class LinkedList
   end
   
   def to_string
-    data_string = '' 
+    data_string = + '' 
     current_node = self.head
     if(self.head.nil?)
       data_string 
     else
       while(!current_node.next_node.nil?)
           # require 'pry'; binding.pry
-        data_string << + ' ' + current_node.data
+        data_string << current_node.data + ' '
         current_node = current_node.next_node
       end
         # require 'pry'; binding.pry
-      data_string << + ' ' + current_node.data
+      data_string << current_node.data
     end
   end
   # require 'pry'; binding.pry
