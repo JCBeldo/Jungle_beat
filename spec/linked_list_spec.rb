@@ -86,7 +86,6 @@ RSpec.describe do
 
     expect(list.append('flick')).to eq('flick')
     expect(list.append('deep')).to eq('deep')
-    require 'pry'; binding.pry
     expect(list.append('doop')).to eq('doop')
     expect(list.to_string).to eq('flick deep doop')
     expect(list.includes?('deep')).to eq(true)

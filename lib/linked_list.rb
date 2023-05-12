@@ -43,15 +43,13 @@ class LinkedList
       data_string 
     else
       while(!current_node.next_node.nil?)
-          # require 'pry'; binding.pry
         data_string << current_node.data + ' '
         current_node = current_node.next_node
       end
-        # require 'pry'; binding.pry
       data_string << current_node.data
     end
   end
-  # require 'pry'; binding.pry
+
   def prepend(data)
     if(self.head.nil?)
       @head = Node.new(data)
@@ -80,6 +78,26 @@ class LinkedList
   return data
   end
   # require 'pry'; binding.pry
+
+  def find(start, amount)
+    current_node = head
+    counter = 0
+    until counter == start
+      current_node = current_node.next_node
+      counter += 1
+    end
+
+    if amount == 1
+      return current_node.data
+    else amount > 1
+      str = []
+      amount.times do
+        str << current_node.data
+        current_node = current_node.next_node
+      end
+      str.join(" ")
+    end
+  end
 
   # def find(position, num_elements)
   #   if(self.head.nil?)
